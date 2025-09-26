@@ -1,0 +1,76 @@
+import random
+
+play_game = True
+while play_game:
+
+    generated_number = random.randint(1,100)
+    print("welcome to number guessing game")
+    level = input("please choose 'hard' for 5 lives and 'easy' for 10 lives:").lower()
+
+    if level == 'hard':
+        lives = 5
+    elif level == 'easy':
+        lives = 10
+    else:
+        print("Invalid choice. Defaulting to 'easy' (10 lives).")
+        lives = 10
+
+    chosen_number = None
+
+
+    while lives>0 and chosen_number != generated_number:
+        chosen_number = int(input("please enter an integer number between 1 and 100:"))
+
+        if chosen_number > generated_number:
+            lives -= 1
+            print(f"too high, try again, you have {lives} lives remaining")
+        else:
+            lives -= 1
+            print(f"too low, try again, you have {lives} lives remaining")
+    if chosen_number == generated_number:
+        print(f"you have won, the number was {generated_number}")
+
+    else:
+        print(f"you have got no life left, the number was {generated_number}")
+
+    want_to_continue = input("do you want to continue y for yes and n for no").lower()
+    if want_to_continue == 'y':
+        print("\n" *20)
+    else:
+        print("bye bye")
+        play_game = False
+
+
+
+# import random
+#
+# generated_number = random.randint(1, 100)
+#
+# level = input("please choose 'hard' for 5 lives and 'easy' for 10 lives: ").lower()
+# if level == 'hard':
+#     lives = 5
+# elif level == 'easy':
+#     lives = 10
+# else:
+#     print("Invalid choice. Defaulting to 'easy' (10 lives).")
+#     lives = 10
+#
+# guess = None
+# while lives > 0 and guess != generated_number:
+#     guess = int(input("please enter an integer number between 1 and 100: "))
+#     if guess > generated_number:
+#         print("too high, try again")
+#         lives -= 1
+#     elif guess < generated_number:
+#         print("too low, try again")
+#         lives -= 1
+#     # if guess == generated_number, the loop condition will fail next check
+#
+# # after loop ends, either they won or ran out of lives
+# if guess == generated_number:
+#     print(f"you have got it, the number was {generated_number}. You won!")
+# else:
+#     print(f"you have got no life left, the number was {generated_number}.")
+
+
+
