@@ -1,0 +1,60 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+list_of_options = [rock, paper, scissors]
+my_choice = int(input("what do you choose 0 for rock, 1 for paper, 2 for scissor:\n"))
+
+random_num = random.randint (0, 2)
+print (random_num)
+if my_choice == 0:
+    if random_num == 1:
+        print(f"computer chooses {paper}")
+        print("computer wins")
+    elif random_num == 2:
+        print(f"computer chooses {scissors}")
+        print("you win")
+    elif random_num == 0:
+        print(f"you both chose rock{rock}, it is a draw")
+else:
+    print("invalid response")
+if my_choice == 1:
+    if random_num == 0:
+        print(f"computer chooses {rock}, you win")
+    elif random_num == 2:
+        print(f"computer chooses {scissors}, computer wins")
+    elif random_num == 1:
+        print(f"you both chose {paper}, it is a draw")
+if my_choice == 2:
+    if random_num ==0:
+        print(f"computer chooses {rock}, you lose")
+    elif random_num == 1:
+        print(f"computer chooses {paper}, you win")
+    elif random_num == 2:
+        print(f"computer chooses {scissors}, it is a draw")
+
+
