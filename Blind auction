@@ -1,0 +1,17 @@
+bid_directory = {}
+bid_end = False
+while not bid_end:
+    bidder_name = input("What is your name\n")
+    bid_amount = input("please enter your bid amount£\n")
+    bid_directory[bidder_name] = bid_amount
+    bid_continuation = input("do you want to add another bid yes/no?\n").lower()
+    if bid_continuation == "yes":
+        print("\n" * 20)
+        bid_end = False
+
+    else:
+        print("\n" * 20)
+        bid_end = True
+max_bidder = max(bid_directory, key=bid_directory.get)
+max_bid = bid_directory[max_bidder]
+print (f"highest bidder is {max_bidder} with bid of £ {max_bid}")
